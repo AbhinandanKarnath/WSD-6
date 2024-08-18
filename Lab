@@ -1,0 +1,16 @@
+Self Learning : Tailwind CSS
+Implementing a User Registration Form with Validation for "YOUR DOMAIN"
+
+You're part of a development team responsible for creating a user registration form for a new website. The form will collect essential user information, ensuring all data is valid and meets specific criteria before submission.
+Accept only alphabetic characters and spaces, with a minimum of 3 characters. Validate for proper email format (e.g., "user@example.com"). Ensure the password is at least 8 characters long and contains both letters and numbers. This field must match the password entered. The date must be in "YYYY-MM-DD" format, and the user must be at least 18 years old.
+
+Implement form validation using JavaScript, focusing on delivering a user-friendly experience by appropriately handling events and providing clear feedback.
+Create the HTML structure for the registration form, including input fields for each of the above requirements, labels, and a submit button.
+Implement validation that checks each field upon form submission. If any field fails validation, display an error message next to it and prevent form submission until all fields are valid.
+As the user interacts with the form, provide real-time feedback. For example, show a green checkmark for valid inputs and a red "x" for invalid ones. This should update dynamically as the user types.
+Continuously check if the "Password" and "Confirm Password" fields match, and display a message if they don't.
+Calculate the user's age based on the "Date of Birth" field, and disable the submit button if the user is under 18.
+Attach event listeners to the form elements to trigger validation and provide immediate feedback as the user interacts with the form.
+Design the form to visually represent validation states. Use styles such as red borders for invalid inputs, green borders for valid inputs, and clear error messages to guide the user.
+You may use plain JavaScript or leverage libraries/frameworks of your choice to accomplish these tasks.
+Document your code and explain the rationale behind your design and implementation decisions.

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register-form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function () {
+            disable();
+        };
+
+        function disable() {
+            const button = document.getElementById("submit");
+            button.disabled = true;
+            button.style.background = "grey";
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-3xl text-center my-5">Please Register</h1>
+        <div class="draw">
+            <div class="circle">
+            </div>
+            <div class="line"></div>
+            <div class="circle"></div>
+            <div class="line unfill"></div>
+            <div class="circle unfill"></div>
+        </div>
+    </header>
+    <main>
+
+
+
+        <form class="max-w-sm mx-auto" action="submit.html" method="get">
+            <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your user name /
+                    email</label>
+                <input type="email" id="email"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    placeholder="username / name@mail.com" required />
+            </div>
+            <div class="mb-5">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                    password</label>
+                <input type="password" id="password" oninput="checkPasswordStrength()"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    required />
+            </div>
+            <div class="mb-5">
+                <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Repeat
+                    password</label>
+                <input type="password" id="repeat-password" oninput="checkPassword()"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    required />
+            </div>
+            <div class="flex items-start mb-5">
+                <div class="flex items-center h-5">
+                    <input id="terms" type="checkbox" onclick="invertButton()" value=""
+                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                        required />
+                </div>
+                <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a
+                        href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and
+                        conditions</a></label>
+            </div>
+            <button type="submit" id="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register
+                new account</button>
+
+
+            <div class="m-10 relative">
+                <div id="password-suggestions"
+                    class="hidden bg-white dark:bg-gray-700 text-center text-sm p-2 mt-1 rounded-lg shadow-lg w-full absolute top-full left-0">
+                    <p id="length" class="text-gray-500">Minimum 8 characters</p>
+                    <p id="uppercase" class="text-gray-500">At least one uppercase letter</p>
+                    <p id="number" class="text-gray-500">At least one number</p>
+                    <p id="symbol" class="text-gray-500">At least one special character</p>
+                </div>
+            </div>
+
+            <div class="m-1 relative">
+                <div id="password-same"
+                    class="hidden bg-white dark:bg-gray-700 text-center text-sm p-2 mt-1 rounded-lg shadow-lg w-full absolute top-full left-0">
+                    <p id="length" class="text-gray-500">password</p>
+                </div>
+            </div>
+
+        </form>
+
+
+
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+
+        function invertButton() {
+            const button = document.getElementById("submit");
+            button.disabled = !button.disabled;
+            button.style.background = button.disabled ? "grey" : "#1d4ed8";
+        }
+
+        function checkPassword() {
+    const password1 = document.getElementById("password");
+    const password2 = document.getElementById("repeat-password");
+    const suggestions = document.getElementById("password-same");
+
+    value1 = password1.value;
+    value2 = password2.value;
+
+    if (value1 != value2) {
+        password1.style.borderColor = "red";
+        password2.style.borderColor = "red";
+        suggestions.classList.remove('hidden');
+        suggestions.innerHTML = "<p class='text-red-500'>Passwords do not match</p>";
+    } else {
+        password1.style.borderColor = "green";
+        password2.style.borderColor = "green";
+        suggestions.classList.add('hidden');
+    }
+}
+
+        function checkPasswordStrength() {
+        const password = document.getElementById("password").value;
+        const suggestions = document.getElementById("password-suggestions");
+        const length = document.getElementById("length");
+        const uppercase = document.getElementById("uppercase");
+        const number = document.getElementById("number");
+        const symbol = document.getElementById("symbol");
+
+        suggestions.classList.remove('hidden');
+
+        length.classList.toggle('text-green-500', password.length >= 8);
+        length.classList.toggle('text-gray-500', password.length < 8);
+
+        uppercase.classList.toggle('text-green-500', /[A-Z]/.test(password));
+        uppercase.classList.toggle('text-gray-500', !/[A-Z]/.test(password));
+
+        number.classList.toggle('text-green-500', /\d/.test(password));
+        number.classList.toggle('text-gray-500', !/\d/.test(password));
+
+        symbol.classList.toggle('text-green-500', /[\W_]/.test(password));
+        symbol.classList.toggle('text-gray-500', !/[\W_]/.test(password));
+
+        if (password.length >= 8 && /[A-Z]/.test(password) && /\d/.test(password) && /[\W_]/.test(password)) {
+            suggestions.classList.add('hidden');
+        }
+    }
+
+    </script>
+</body>
+
+</html>

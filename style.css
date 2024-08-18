@@ -1,0 +1,151 @@
+@media screen and (min-width:100px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .draw {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .line {
+        width: 800px;
+    }
+}
+
+@media screen and (min-width:600px) {
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .draw {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .line {
+        width: 100px;
+    }
+}
+
+@media screen and (min-width:800px) {
+    body {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .draw {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .line {
+        width: 140px;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    body {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .draw {
+        margin-bottom: 20px;
+        ;
+    }
+
+    .line {
+        width: 180px;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    body {
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+
+    .draw {
+        margin-bottom: 20px;
+        ;
+    }
+
+    .line {
+        width: 230px;
+    }
+
+
+    .circle {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+body {
+    background-color: #DBE4EE;
+}
+
+h1 {
+    color: #96705B;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #0d1389;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #2E86AB;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.flex-item {
+    border-radius: 5px;
+    background-color: #c9d9dc;
+    padding: 20px;
+}
+
+
+.draw {
+    display: flex;
+    padding: 20px 170px 20px 170px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #0000ffb3;
+    border-radius: 50%;
+}
+
+.line {
+    /* width:80px; */
+    height: 5px;
+    background-color: #0000ffb3;
+    border-radius: 100px;
+    margin-top: 5px;
+}
+
+.unfill {
+    background-color: rgba(128, 128, 128, 0.7);
+}
